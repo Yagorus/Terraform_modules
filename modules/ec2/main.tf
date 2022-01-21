@@ -11,7 +11,7 @@ resource "aws_instance" "AmazonLinux" {
   count =   length(var.public_subnet_CIDR)
   ami   =   data.aws_ami.latest_amazon_linux.id
   subnet_id = var.subnet_id
-  vpc_security_group_ids = var.vpc_SG_id.*.id
+  vpc_security_group_ids = var.vpc_SG_ids.*.id
 
   user_data = file("./modules/ec2/user_data.sh")
   tags = {

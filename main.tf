@@ -17,6 +17,6 @@ module "security" {
 module "ec2" {
     source = "./modules/ec2"
     public_subnet_CIDR = module.subnet.public_subnet_CIDR
-    vpc_SG_id = module.security.vpc_SG_ids
+    vpc_SG_ids = module.security.vpc_SG_ids
     subnet_id = module.subnet.subnet_id
 }
