@@ -3,7 +3,7 @@ data "aws_ami" "latest_amazon_linux"{
     most_recent = true
         filter {
             name = "name"
-            value   =  ["amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"]    
+            values   =  ["amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"]    
         }
 }
 
