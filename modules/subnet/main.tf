@@ -44,4 +44,4 @@ resource "aws_route_table_association" "routeTableAssociationPublicRoute" {
   route_table_id = aws_route_table.PublicRT
   subnet_id      = element(aws_route_table.public.*.id, count.index)
 }
-}
+
