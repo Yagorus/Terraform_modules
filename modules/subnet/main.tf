@@ -42,7 +42,6 @@ resource "aws_route_table" "PublicRT" {
 resource "aws_route_table_association" "routeTableAssociationPublicRoute" {
   count = length(var.public_subnet_CIDR)
   route_table_id = aws_route_table.PublicRT.id
-  
   subnet_id      = aws_subnet.public[0].id
   #element(aws_subnet.public.*.id, count.index)
 }
