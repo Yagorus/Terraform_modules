@@ -6,13 +6,13 @@ module "subnet" {
     source      = "./modules/subnet"
     vpc_id      = module.vpc.vpc_id
     environment  = module.vpc.environment 
+    CIDR_block_VPC = module.vpc.CIDR_block_VPC
 }
 
 module "security" {
     source = "./modules/security"
     vpc_id  = module.vpc.vpc_id
     environment = module.vpc.environment
-    CIDR_block_VPC = module.vpc.CIDR_block_VPC
 }
 
 module "ec2" {
