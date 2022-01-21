@@ -1,6 +1,6 @@
 resource "aws_security_group" "SecurityGroup_EC2inPublicSubnet" {
   name  =   "SecurityGroup"
-  vpc_id    =   var.vpc_id
+  vpc_id    =   var.vpc_id.id
 
   dynamic "ingress" {
       for_each = var.port_SG
