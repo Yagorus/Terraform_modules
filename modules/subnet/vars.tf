@@ -3,6 +3,5 @@ variable "public_subnet_CIDR" {
 }
 variable "vpc_id" { }
 variable "environment" { }
-#variable "aws_profile_access_key_path" { }
 variable "aws_region" { }
 variable "aws_profile" { }
