@@ -4,7 +4,7 @@ resource "aws_subnet" "public" {
     #  public_subnet_CIDR  = ["10.0.1.0/24"]
   count             =   length(var.public_subnet_CIDR)
   cidr_block        =   tolist(var.public_subnet_CIDR)[count.index]
-  vpc_id            =   var.vpc_id.id
+  vpc_id            =   var.vpc_id
   # to make EC2 get public ip to use 
   map_public_ip_on_launch = true
   # public_subnet_CIDR  = ["10.0.1.0/24"] | count.index = 0
@@ -18,7 +18,7 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_internet_gateway" "InternetGateway" {
-  vpc_id = var.vpc_id.id
+  vpc_id = var.vpc_id
 
   tags = {
     Name = "${var.environment}-InternetGateway"
@@ -26,7 +26,7 @@ resource "aws_internet_gateway" "InternetGateway" {
 }
 
 resource "aws_route_table" "PublicRT" {
-  vpc_id = var.vpc_id.id
+  vpc_id = var.vpc_id
 
   route  {
     cidr_block  = "10.0.1.0/24"
