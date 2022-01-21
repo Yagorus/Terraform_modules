@@ -26,7 +26,7 @@ resource "aws_internet_gateway" "InternetGateway" {
 }
 
 resource "aws_route_table" "PublicRT" {
-  vpc_id = var.vpc_id
+  vpc_id = var.vpc_id.id
 
   route  {
     cidr_block  = "10.0.1.0/24"
