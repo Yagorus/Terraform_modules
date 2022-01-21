@@ -3,3 +3,5 @@ variable "public_subnet_CIDR" {
 }
 variable "vpc_id" { }
 variable "environment" { }
+variable "CIDR_block_VPC" { }
+
