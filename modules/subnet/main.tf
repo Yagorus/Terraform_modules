@@ -39,9 +39,9 @@ resource "aws_route_table" "PublicRT" {
 
   depends_on = [aws_internet_gateway.InternetGateway]
 }
-/*
 resource "aws_route_table_association" "routeTableAssociationPublicRoute" {
   count = length(var.public_subnet_CIDR)
   route_table_id = aws_route_table.PublicRT
+  subnet_id      = element(aws_route_table.public.*.id, count.index)
 }
-*/
+}
